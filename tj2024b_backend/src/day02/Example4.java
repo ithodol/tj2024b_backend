@@ -80,7 +80,7 @@ public class Example4 {
 		
 		// +오류 : 지정한 함수의 반호나타입과 입력한 데이터 허용범위를 벗어나면 InputMismatchException 발생
 		
-	}
+	} 
 
 	
 }
