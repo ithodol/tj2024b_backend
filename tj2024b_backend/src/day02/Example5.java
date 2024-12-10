@@ -6,7 +6,7 @@ public class Example5 {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		
+		 
 	      // [지문1] 국어 , 영어 , 수학 점수를 각 입력받아서 각 변수에 저장하고 총점 과 평균을 계산하여 console 출력하시오.
 //	      byte 국어 = scan.nextByte();
 //	      System.out.println("국어 점수 : " + 국어);
