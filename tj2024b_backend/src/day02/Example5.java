@@ -89,14 +89,14 @@ public class Example5 {
 		
 	      // [지문8] 1차점수 와 2차점수 각각 입력받아서 
 	         // -> 총점이 150점이상이면 '합격' 아니면 '불합격' 으로 console 출력하시오.
-//	      int 점수1 = scan.nextInt();
-//	      System.out.println("점수1 : " + 점수1);
-//	      int 점수2 = scan.nextInt();
-//	      System.out.println("점수2 : " + 점수2);
-//	      int 총점 = 점수1 + 점수2;
-//	      System.out.println("총점 : " + 총점);
-//	      String 합격여부 = 총점 >= 150 ? (String) "합격" : "불합격";
-//	      System.out.println("합격여부 : " + 합격여부);
+	      int 점수1 = scan.nextInt();
+	      System.out.println("점수1 : " + 점수1);
+	      int 점수2 = scan.nextInt();
+	      System.out.println("점수2 : " + 점수2);
+	      int 총점 = 점수1 + 점수2;
+	      System.out.println("총점 : " + 총점);
+	      String 합격여부 = 총점 >= 150 ? "합격" : "불합격";
+	      System.out.println("합격여부 : " + 합격여부);
 
 
 	}
