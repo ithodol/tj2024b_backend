@@ -21,9 +21,10 @@ public class Example4 {
 		
 		
 //		문제2 : 점수를 정수형으로 입력받아 점수가 90점 이상이면 'A등급', 80점 이상이면 'B등급', 70점 이상이면 'C등급', 그외 '재시험' 으로 출력 하시오.
+		
 //		byte score = scan.nextByte();
 //		String grade = "";
-//		
+	
 //		if(score >= 90) {
 //			grade = "A등급";
 //		}else if(score >= 80) {
@@ -42,6 +43,7 @@ public class Example4 {
 		
 
 //		문제3 : 각 3개의 정수형으로 수를 입력받아 가장 큰 수를 출력 하시오. [ 전제조건 : 각 정수는 서로 다른 정수값 ]
+		
 		// 입력
 //		int 정수1 = scan.nextInt();
 //		int 정수2 = scan.nextInt();
@@ -68,7 +70,7 @@ public class Example4 {
 //		int value1 = scan.nextInt();
 //		int value2 = scan.nextInt();
 //		int value3 = scan.nextInt();
-//		
+		
 		// 2. 비교 / 3개의 변수들간의 값 비교 (오름차순 : 작->큰 / 내림차순 : 큰->작)
 			// (1) 비교
 				// 조건1. 첫번째값 > 두번째값
@@ -76,6 +78,7 @@ public class Example4 {
 				// 조건3. 두번째값 > 세번째값
 			// (2) 스왑/ 두 변수간의 값 바꾸기 / temp변수를 활용한 두 변수간의 값 바꾸기
 				// int temp = 첫번재변수값; , 첫번째변수명 = 두번재변수값; , 두번째변수명 = temp값;
+		
 //		if(value1 < value2) { // 만약 첫번재값이 두번째값보다 크면, (오름차순) 큰 값을 뒤로 보내기. >오름차순 <내림차순
 //			int temp = value1; 	value1 = value2; 	value2 = temp;
 //		}
@@ -85,7 +88,7 @@ public class Example4 {
 //		if(value2 > value3) {
 //			int temp = value2; 	value2 = value3; 	value3 = temp;
 //		}
-//		
+		
 //		System.out.println(value1);
 //		System.out.println(value2);
 //		System.out.println(value3);
@@ -108,9 +111,7 @@ public class Example4 {
 
 //		byte player1 = scan.nextByte();
 //		byte player2 = scan.nextByte();
-//		
-//		
-//		
+		
 //		if(player1 > player2) {
 //			System.out.println("플레이어1 승리");
 //		}else if(player1 < player2) {
@@ -190,7 +191,7 @@ public class Example4 {
 		
 		
 		
-		// 조별과제 (백준 알람시계)		
+	// 조별과제 (백준 알람시계)		
 		
       int H = scan.nextInt();  // 0시
       int M = scan.nextInt()-45; // 30분 - 45분 => -15
