@@ -145,46 +145,10 @@ public class Example1 { // 클래스 start
 		
 		char ch;
 		ch = (fatherAge > motherAge) ? 'T' : 'F';
-		System.out.println(ch);
-		
-		
+		System.out.println(ch); // F
 		
 		
 	} // main 함수 end
 
 } // 클래스 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
