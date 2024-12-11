@@ -191,7 +191,7 @@ public class Example4 {
 		
 		
 		
-	// 조별과제 (백준 알람시계)		
+	// 조별과제 (백준 2884번 알람시계)		
 		
       int H = scan.nextInt();  // 0시
       int M = scan.nextInt()-45; // 30분 - 45분 => -15
