@@ -112,6 +112,42 @@ public class Example1 { // 클래스 start
 		System.out.println(value); // true
 			
 		
+		// [6] 논리연산자 (&&논리곱(모두 참이면 참), ||논리합(하나라도 참이면 참), !부정(반대))
+		int num1 = 10;
+		int i = 2;
+		
+		boolean value3 = ((num1 = num1 + 10) < 10) && ((i = i + 2) < 10);
+							// [단락회로평가] 앞 조건이 false 이므로, 뒤 조건은 볼 필요 없음. 코드 실행 x
+		System.out.println(value3); // false
+		System.out.println(num1); // 20
+		System.out.println(i); // 4 -> 2
+		
+		value3 = ((num1 = num1+10) > 10) || ((i = i + 2) < 10);
+					// [단락회로평가] 앞 조건이 true 이므로, 뒤 조건은 볼 필요 없음. 코드 실행 x
+		System.out.println(value3); // true
+		System.out.println(num1); // 20
+		System.out.println(i); // 2
+		
+		
+		// [7] 복합 대입 연산자 (+=, -=, *=, /=, %=)
+		
+		// 1분 복습 p.81
+		num1 = num1 + 5;
+		num1 += 5;
+		num1 = num1 - 5;
+		num -= 5;
+		
+		
+		// [8] 조건 연산자 (조건식 ? 참결과 : 거짓결과)
+		int num3 = 5 > 3 ? 10 : 20; // 만약 5가 3보다 크면 10을 대입, 아니면 20 대입
+		int fatherAge = 45;
+		int motherAge = 47;
+		
+		char ch;
+		ch = (fatherAge > motherAge) ? 'T' : 'F';
+		System.out.println(ch);
+		
+		
 		
 		
 	} // main 함수 end
