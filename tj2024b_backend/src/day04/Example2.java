@@ -58,7 +58,7 @@ public class Example2 {
 			num3++;
 		}while(num <= 10); // 실행 후 조건 검사, 후 검사
 		
-		System.out.println("[do-while] 1부터 10까지의 합은 " + sum + "입니다");
+		System.out.println("[do-while] 1부터 10까지의 합은 " + sum3 + "입니다");
 		
 		
 		
@@ -102,11 +102,7 @@ public class Example2 {
 			System.out.printf("[for] 2 x %d = %d \n",곱3, (2*곱3));
 		}
 		
-		
-		
-		
-		
-		
+	
 
 	}
 
