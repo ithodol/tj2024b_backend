@@ -102,8 +102,17 @@ public class Example2 {
 			System.out.printf("[for] 2 x %d = %d \n",곱3, (2*곱3));
 		}
 		
-	
+
 
 	}
 
 }
+
+
+
+
+
+
+
+
+
