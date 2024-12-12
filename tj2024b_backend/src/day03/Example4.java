@@ -111,7 +111,6 @@ public class Example4 {
 
 //		byte player1 = scan.nextByte();
 //		byte player2 = scan.nextByte();
-		
 //		if(player1 > player2) {
 //			System.out.println("플레이어1 승리");
 //		}else if(player1 < player2) {
@@ -130,7 +129,20 @@ public class Example4 {
 //		   -연수가 4, 100으로 나누어 떨어지는 해는 평년으로 한다.
 //		   -연수가 4, 100, 400으로 나누어 떨어지는 해는 윤년으로 둔다.
 //		   [ 출력조건] '입력한OOOO년 은' 윤년 입니다.  혹은 평년 입니다 로 출력하시오.
-
+		int 연도 = scan.nextInt();
+		String 윤평 = "";
+		
+		if(연도%4 == 0) {
+			윤평 = "윤년";
+		}else if(연도%100 == 0) {
+			윤평 = "평년";
+		}else if(연도%400 == 0) {
+			윤평 = "윤년";
+		}
+		System.out.printf("입력한 %d년은 %s입니다.",연도,윤평);
+		
+		
+		
 		
 		
 		
