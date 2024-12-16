@@ -51,7 +51,7 @@ public class Example4 {
 		game1.job = "비숍";
 		game2.job = "윈브";
 		
-		
+	
 		
 		
 	}
