@@ -42,8 +42,7 @@
 			모든 체크 권한 하기 
 			[Generate token]	
 		7. 토큰 발급코드 : ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-		ID : 202241210
-		PW : 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
+
 				
 [ 이클립스 GIT 저장소 삭제 ] 
 	1. 저장소 오른쪽 클릭
