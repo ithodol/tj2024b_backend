@@ -25,6 +25,7 @@ public class Example1 {
 		
 		while(true) { // [1] 무한반복문
 			// [2] 출력함수 프로그램의 메뉴 메세지 출력
+			
 			System.out.print("1.대기등록 2.대기현황 : "); // print()함수를 이용하여 사용자에게 등록과 출력 메뉴를 보여준다
 			
 			// [3] 입력함수 Scanner 객체 필요
