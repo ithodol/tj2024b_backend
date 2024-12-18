@@ -24,7 +24,7 @@ public class BoardProgram3 {
 			// [3-1] 입력함수
 			int choose = scan.nextInt();
 			if(choose == 1) { // [4] 조건문, if(조건){}, 입력받은 값에 따른 흐름제어
-				System.err.println(">> 1.등록 선택");
+				System.out.println(">> 1.등록 선택");
 				// [6] 키보드로부터 3개의 정보를 입력받기
 				System.out.println("> 제목 : "); String title = scan.next();
 				System.out.println("> 내용 : "); String content = scan.next();
