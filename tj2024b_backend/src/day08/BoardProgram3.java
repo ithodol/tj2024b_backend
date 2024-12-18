@@ -19,7 +19,7 @@ public class BoardProgram3 {
 		while(true) { // [1] 반복문, while(조건{}, while(true){} 무한루프 / 등록,출력 기능을 여러번 실행하기 위함
 			// [2] 출력함수
 			System.out.println("1.등록 2.출력 : ");
-			// [3] 입력객체
+			// [3] 입력객체 
 			Scanner scan = new Scanner(System.in);
 			// [3-1] 입력함수
 			int choose = scan.nextInt();
