@@ -46,7 +46,7 @@ public class Example1 {
 //				if( wait1 != null ) { System.out.printf("인원수 %d 명 , 연락처 : %s \n" , wait1.count , wait1.phone ); }
 //				if( wait2 != null ) { System.out.printf("인원수 %d 명 , 연락처 : %s \n" , wait2.count , wait2.phone ); }
 //				if( wait3 != null ) { System.out.printf("인원수 %d 명 , 연락처 : %s \n" , wait3.count , wait3.phone ); }
-				// (변견사항3) 대기명단
+				// (변견사항3) 대기명단이 많아지면 하나씩 입력할 것인가? => ㄴㄴ 반복문 활용
 				for(int index = 0; index <= waitingArray.length-1; index++) {
 					if(waitingArray[index] != null) {
 						System.out.printf("인원수 %d명, 연락처 : %s \n",
