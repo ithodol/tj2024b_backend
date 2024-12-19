@@ -13,7 +13,17 @@ import java.util.Scanner;
 	      로그인 함수 : 아이디,비밀번호를 입력받아 기존의 저장된 정보와 일치한 정보가 있으면 '로그인성공' 아니면 '로그인실패' 출력한다.
 	   - 프로그램 초기 메뉴 : 1.회원가입 2.로그인
 	   제출 : 카톡 git 주소
+	   
+	   
+	   ** 권장 순서
+		   1. 구현하고자 하는 초기 화면 구성
+		   2. 객체(클래스)설계, 메모리 설계
+		   3. 메소드 구성 
+	   
+	   
+	   
 */
+
 public class Example2 {
 
 	public static void main(String[] args) {
@@ -22,7 +32,8 @@ public class Example2 {
 		Info[] infoList = new Info[100];
 		
 		while(true) {
-			System.out.println("1.회원가입 2.로그인 : ");
+			System.out.println("======== 선택 ========");
+			System.out.print("1.회원가입 2.로그인 : ");
 			Scanner scan = new Scanner(System.in);
 			int choose = scan.nextInt();
 			if(choose == 1) {
@@ -30,7 +41,6 @@ public class Example2 {
 			}else if(choose == 2) {
 				is.infoPrint(scan, infoList);
 			}
-			
 			
 		} // while end
 		
