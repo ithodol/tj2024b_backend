@@ -3,7 +3,6 @@ package day11;
 import java.util.Scanner;
 
 public class BoardService {
-
 	
 		// 게시물 등록
 		public void boardAdd(Scanner scan, BoardDto[] boards) {
@@ -46,7 +45,6 @@ public class BoardService {
 			
 		} // boardPrint main end
 	
-
 } // class end
 
 

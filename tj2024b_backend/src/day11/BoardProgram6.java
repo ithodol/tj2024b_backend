@@ -23,10 +23,8 @@ public class BoardProgram6 { // class start
 				bs.boardPrint(boards);
 			} // if end
 
-			
 		} // while end
 		
 	} // main end
-	
 	
 } // class end
