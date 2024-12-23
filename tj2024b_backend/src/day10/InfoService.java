@@ -69,12 +69,10 @@ public class InfoService {
 			System.out.println("로그인 실패 \n");
 		}
 		
-		
-		
-		
+
 	} // infoPrint end
 	
-}
+} // class end
 
 
 
