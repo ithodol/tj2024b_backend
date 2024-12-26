@@ -85,7 +85,20 @@
 			개발자는 위 흐름순서와 다르게 코드 작성이 가능하지만 
 			관례적인 패턴규칙으로 위 흐름코드를 따라 작성해야함
 
-
+[실습 예1]
+	day13 패키지
+	boardprogram8 패키지
+		controller 패키지
+			BoardController 클래스	*싱글톤O	입력받은 게시물정보를 받아 
+		model 패키지
+			dao 패키지
+				BoardDao 클래스		*싱글톤O
+			dto 패키지
+				BoardDto 클래스		*싱글톤X
+		
+		view 패키지
+			BaordView 클래스			*싱글톤O
+		AppStart 클래스				*싱글톤X
 
 
 
