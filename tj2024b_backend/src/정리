@@ -1,0 +1,30 @@
+JAVA
+
+1. 변수
+	- 타입
+	- 자동타입변환, 강제타입변환
+2. 출력함수
+3. 입력함수
+4. 연산자 : 산술, 비교, 논리, 증감, 복합대입, 삼항
+5. 조건문 : if, switch / day4
+6. 반복문 : while, do-while, for
+	- break, continue / day4
+7. 배열타입
+8. 클래스타입 / day6,7
+	- 멤버변수
+	- 메소드
+	- 생성자 / day9
+	- 접근제한자 / day10
+	- getter / setter day10
+	- this
+	- static
+	
+**실습자료**
+	- BoardProgram v1 ~ v7
+		- v1 : 변수, 입출력함수, 연산자, 조건문, 반복문
+		- v2 : 클래스타입(멤버변수)
+		- v3 : 배열타입
+		- v4 : 클래스타입(멤버변수, 메소드)
+		- v5 : 클래스타입(멤버변수, 메소드, 생성자)
+		- v6 : 접근제한자(public, private) getter / setter
+		- v7 : 회원제게시판
