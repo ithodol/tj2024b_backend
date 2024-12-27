@@ -63,8 +63,6 @@ public class Example1 {
 			// [2] .add() 이용한 리스트객체 내 요소객체 추가
 		library.add(new Book("눈먼 올빼미", "샤데크 헤다야트"));
 		library.add(new Book("데미안", "헤르만 헤세"));
-		library.add(new Book("동물농장", "조지 오웰"));
-		library.add(new Book("호밀밭의 파수꾼", "제롬 데이비드 샐린저"));
 		
 		Book book1 = new Book("동물농장", "조지 오웰");
 		library.add(book1);
