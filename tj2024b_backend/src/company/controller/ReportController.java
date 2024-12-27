@@ -10,21 +10,7 @@ public class ReportController {
 	private ReportController() {}
 	private static ReportController instance = new ReportController();
 	public static ReportController getinstance() {return instance;}
-	
-
-	// 회원등록 페이지
-	
-	
-	// 로그인 페이지
-	
-	
-	// 회원수정 페이지
-	
-	
-	// 회원삭제 페이지
-	
-	
-	
+		
 	
 	// 보고서 등록
 	public boolean create(ReportDto reportDto) {
