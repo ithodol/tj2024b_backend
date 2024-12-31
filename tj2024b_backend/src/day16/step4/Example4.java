@@ -39,19 +39,19 @@ public class Example4 {
         yourCar.run(); // 일반타이어
 
         myCar.tire = new Tire();
-        //myCar.run(); // 일반타이어
+        myCar.run(); // 일반타이어
 
         myCar.tire = new HankookTire();
-        //myCar.run(); // 한국타이어
+        myCar.run(); // 한국타이어
 
         myCar.tire = new KumhoTire();
-        //myCar.run(); // 금호타이어
-        //yourCar.run(); // 일반타이어
+        myCar.run(); // 금호타이어
+        yourCar.run(); // 일반타이어
 
-        //System.out.println( myCar.tire instanceof  KumhoTire  ); // true
+        System.out.println( myCar.tire instanceof  KumhoTire  ); // true
         if( myCar.tire instanceof Tire ){
             myCar.tire = new HankookTire();
         }
-        //myCar.run(); // 한국타이어
+        myCar.run(); // 한국타이어
     }
 }
