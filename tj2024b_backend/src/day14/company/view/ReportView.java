@@ -18,22 +18,7 @@ public class ReportView {
 	public void infoIndex() {
 		System.out.println("test");
 	}
-	// 회원 메인페이지
-	
-	
-	// 회원등록 페이지
-	
-	
-	// 로그인 페이지
-	
-	
-	// 회원수정 페이지
-	
-	
-	// 회원삭제 페이지
-	
-	
-	
+
 	// 보고서 메인페이지
 	public void reportIndex() {
 		while(true) {
