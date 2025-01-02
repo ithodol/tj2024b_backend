@@ -34,16 +34,16 @@ public class Example3 {
         //myCar.run();
 
         myCar.tire = new HankookTire();
-        myCar.run();
+        myCar.run(); // 한국타이어
 
         myCar.tire = new KumhoTire();
-        myCar.run();
+        myCar.run(); // 금호타이어
         //yourCar.run();
 
-        System.out.println( myCar.tire instanceof KumhoTire);
+        System.out.println( myCar.tire instanceof KumhoTire); // true
         if( myCar.tire instanceof Tire){
             myCar.tire = new HankookTire();
         }
-        myCar.run();
+        myCar.run(); // 한국타이어
     }
 }
