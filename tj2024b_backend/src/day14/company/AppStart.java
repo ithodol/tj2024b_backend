@@ -1,12 +1,12 @@
 package day14.company;
 
-import day14.company.view.ReportView;
+import day14.company.view.MemberView;
 
 public class AppStart {
 
 	public static void main(String[] args) {
 		
-		ReportView.getinstace().infoIndex();
+		MemberView.getInstance().infoIndex();
 		
 		
 	} // main end
