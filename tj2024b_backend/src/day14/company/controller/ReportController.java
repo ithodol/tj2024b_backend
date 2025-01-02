@@ -9,7 +9,7 @@ public class ReportController {
 	// 싱글톤
 	private ReportController() {}
 	private static ReportController instance = new ReportController();
-	public static ReportController getinstance() {return instance;}
+	public static ReportController getInstance() {return instance;}
 		
 	
 	// 보고서 등록

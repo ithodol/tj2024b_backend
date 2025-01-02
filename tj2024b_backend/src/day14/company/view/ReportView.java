@@ -11,13 +11,10 @@ public class ReportView {
 	// 싱글톤
 	private ReportView() {}
 	private static ReportView instance = new ReportView();
-	public static ReportView getinstace() {return instance;}
+	public static ReportView getinstance() {return instance;}
 	
 	private Scanner scan = new Scanner(System.in);
 	
-	public void infoIndex() {
-		System.out.println("test");
-	}
 
 	// 보고서 메인페이지
 	public void reportIndex() {
@@ -48,7 +45,7 @@ public class ReportView {
 			ReportDto reportDto = new ReportDto(type, content, writer);
 			
 			// 결과값 가져오기
-			boolean result = ReportController.getinstance().create(reportDto);
+			boolean result = ReportController.getInstance().create(reportDto);
 			
 			if(result) {System.out.println("[보고서 등록 성공");}
 			else {System.out.println("[보고서 등록 실패]");}
@@ -61,7 +58,7 @@ public class ReportView {
 		while(true) {
 			System.out.println(">> 2.보고서 내역");
 			// 등록된 보고서 가져오기
-			ArrayList<ReportDto> result = ReportController.getinstance().printAll();
+			ArrayList<ReportDto> result = ReportController.getInstance().printAll();
 			System.out.println("순번\t작성자\t타입\t내용");
 			for(int index = 0; index <= result.size()-1; index++) {
 				ReportDto report = result.get(index);
@@ -91,7 +88,7 @@ public class ReportView {
 						// ****작성자 수정을 원치 않음. 일부 수정 방법 알아보기
 			
 			// 결과 가져오기
-			boolean result = ReportController.getinstance().update(uIndex, reportDto);
+			boolean result = ReportController.getInstance().update(uIndex, reportDto);
 			if(result) {System.out.println("[보고서 수정 성공");}
 			else {System.out.println("[보고서 수정 실패]");}
 		} // while end
@@ -104,7 +101,7 @@ public class ReportView {
 			System.out.println(">> 4. 보고서 삭제");
 			System.out.print("삭제할 인덱스 : ");		int dIndex = scan.nextInt();
 			
-			boolean result = ReportController.getinstance().delete(dIndex);
+			boolean result = ReportController.getInstance().delete(dIndex);
 			
 			if(result) {System.out.println("[보고서 삭제 성공]");}
 			else {System.out.println("[보고서 삭제 실패]");}
