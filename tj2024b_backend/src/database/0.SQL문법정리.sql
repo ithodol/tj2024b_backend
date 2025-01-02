@@ -19,6 +19,42 @@
 			2. DROP DATABASE IF EXISTS DB명 		: db server의 지정한 DB 존재하면 제거 
 		
 	2. DML : Data Manipulation Language 데이터베이스 조작어
+		(1) insert
+			- 모든 속성에 값 대입 -> 속성명 생략 가능
+				insert into 테이블명 values(값1, 값2, 값3);
+			- 특정 속성에 값 대입 -> 속성명 작성해야함
+				insert into 테이블명 (속성명1, 속성명2, 속성명3) values(값1, 값2, 값3);
+			-  여러개의 레코드 삽입
+				insert into 테이블명(속성명1, 속성명2) values(값1, 값2),(값1, 값2),(값1, 값2);
+			** 주의할점 : 속성의 제약조건(not null(공백), unique(중복), default(기본값), pk, fk(참조) ... )에 따라 적절하게 값을 대입해야함
+		(2) select
+			- 전체 속성 레크드 조회, *(와일드카드)
+				select * from 테이블명;
+			- 특정 속성 레코드 조회
+				select 속성명, 속성명2 from 테이블명;
+			- 특정 속성 조건에 따른 레코드 조회
+				select * from 테이블명 where[조건절]
+		
+		(3) update
+			- 전체 레코드 속성값 수정
+				update 테이블명 set 속성명 = 새로운값;
+			- 특정 레코드 속성값 수정
+				update 테이블명 set 속성명 = 새로운값 where [조건절]
+			- 다수 속성값 수정
+				update 테이블명 set 속성명 = 새로운값, 속성명 = 새로운값 where [조건절]
+				
+		(4) delete
+			- 전체 레코드 삭제
+				delete from 테이블명;
+			- 특정 레코드 삭제
+				delete from 테이블명 where [조건절]
+			
+			** 주의할점 : mysql workbench safe mode : 조건없이 수정/삭제가 불가능하게 안전모드를 지원함
+				-> 수정/삭제시 안전모드 꺼야함 실행 가능
+				끄기 : set SQL_SAFE_UPDATES = 0;
+				켜기 : set SQL_SAFE_UPDATES = 1;
+				
+				
 	
 	3. DCL : Data Control Language 데이터베이스 제어어
 	
