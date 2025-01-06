@@ -19,7 +19,7 @@
 		1. 공유할 프로젝트폴더 오른쪽 클릭 
 		2. [ team ] -> share project
 			*주의할점 : 상단에 use create 체크 안함
-			repository : 프로젝트를 공유할 저장소 선택 
+			repository : 프로젝트를 공유할 저장소 선택   
 			[ finish ]
 			* 프로젝트폴더명 옆에 [저장소명] 있으면 공유 성공 
 			
