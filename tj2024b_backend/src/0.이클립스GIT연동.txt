@@ -29,7 +29,7 @@
 		[ staged changes ] : 커밋 할 파일  -
 		[commit message] : 커밋 내용 
 		- [commit and push ] 클릭 
-		
+		  
 	* 토큰 발급 ( 외부에서 github 사용시 비밀번호 대체용 )
 		1. github 홈페이지 본인 프로필 로고 클릭 -> [settings] 클릭 
 		2. 왼쪽 사이드바 메뉴 가장 하단에 [Developer Settings] 클릭 
