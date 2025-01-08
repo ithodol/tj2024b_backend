@@ -19,7 +19,7 @@ public class MemberView {
 			System.out.println("1.회원가입  2.로그인  3.아이디찾기  4.비밀번호 찾기");
 			int choose = scan.nextInt();
 			if(choose == 1) {signup();}
-			else if(choose == 2){}
+			else if(choose == 2){login();}
 			else if(choose == 3){findId();}
 			else if(choose == 4){findPwd();}
 			
@@ -43,8 +43,31 @@ public class MemberView {
 		
 	} // f signup end
 	
+	// 2. 로그인 화면 메소드
+	public void login() {
+		// 순서 : 입력 -> 객체화 -> 컨트롤러에게 전달하고 응답 결과받기 -> 컨트롤러의 결과에 따른 처리
+		System.out.print("아이디 : ");	String mid = scan.next();
+		System.out.print("비밀번호 : ");	String mpwd = scan.next();
+		MemberDto memberDto = new MemberDto();
+		memberDto.setMid(mid);
+		memberDto.setMpwd(mpwd);
+		boolean result = MemberController.getInsetance().login(memberDto);
+		if(result) {
+			System.out.println("로그인 성공");
+		}else {
+			System.out.println("동일한 회원정보가 없습니다");
+		}
+	} // f login end
 	
-	// 2. 아이디찾기 화면 메소드
+	// 2-1 로그아웃 화면 메소드
+	public void logout() {
+		MemberController.getInsetance().logout();
+		System.out.println("로그아웃 완료했습니다");
+	}
+	
+	
+	
+	// 3. 아이디찾기 화면 메소드
 	public void findId() {
 		// (1) 입력
 		System.out.print("이름 : ");		String mname = scan.next();
@@ -68,7 +91,8 @@ public class MemberView {
 		}
 	}
 	
-	// 3. 비밀번호찾기 화면 메소드
+	
+	// 4. 비밀번호찾기 화면 메소드
 	public void findPwd() {
 		// (1) 입력
 		System.out.print("아이디 : ");	String mid = scan.next();
@@ -87,28 +111,44 @@ public class MemberView {
 			System.out.println("[동일한 회원 정보가 없습니다]]");
 		}
 	
-	}
+	} // f findPwd end
 	
 	
+	// 5. 내 정보 보기 화면 메소드
+	public void myInfo() {
+		// 순서 : 1입력 -> 2객체화 -> 3컨트롤러에게 전달하고 응답 결과받기 -> 4컨트롤러의 결과에 다른 처리
+		// 1,2 입력, 객체화 생략
+		// 3 받는 곳 = MemberController().myInfo(주는곳);
+		MemberDto result = MemberController.getInsetance().myInfo();
+		// 4
+		System.out.println("===== 마이페이지 =====");
+		System.out.println("mid : " + result.getMid());
+		System.out.println("mname : " + result.getMname());
+		System.out.println("mphone : " + result.getMphone());
+		System.out.println("mdate : " + result.getMdate());
+		// 서브메뉴
+		while(true) {
+			System.out.println("1.회원수정  2.회원탈퇴  3.뒤로가기");
+			int choose2 = scan.nextInt();
+			if(choose2 == 1) {}
+			else if(choose2 == 2) {delete(); break;}
+			else if(choose2 == 3) {break;}
+		}
+	} // f myInfo end
+	
+	// 6. 회원탈퇴 화면 메소드
+	public void delete() {
+		System.out.println("정말 탈퇴하시겠습니까? 0.확인  1.취소");
+		int choose2 = scan.nextInt();
+		if(choose2 == 0) {
+			// 탈퇴처리 컨트롤러 요청
+			MemberController.getInsetance().delete();
+			logout();
+		}
+	} // f delete end
 	
 	
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
