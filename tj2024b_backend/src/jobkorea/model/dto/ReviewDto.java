@@ -1,13 +1,13 @@
 package jobkorea.model.dto;
 
 public class ReviewDto {
-
+	// 멤버변수
 	private int rno;
 	private int rrating;
 	private String rcontent;
 	private String rdate;
 	
-	
+	// 생성자
 	public ReviewDto() {}
 	public ReviewDto(int rno, int rrating, String rcontent, String rdate) {
 		super();
@@ -17,8 +17,8 @@ public class ReviewDto {
 		this.rdate = rdate;
 	}
 	
-	
-	
+	// 메소드
+		// getter , setter
 	public int getRno() {
 		return rno;
 	}
@@ -43,6 +43,13 @@ public class ReviewDto {
 	public void setRdate(String rdate) {
 		this.rdate = rdate;
 	}
+	
+		// toString
+	@Override
+	public String toString() {
+		return "ReviewDto [rno=" + rno + ", rrating=" + rrating + ", rcontent=" + rcontent + ", rdate=" + rdate + "]";
+	}
+	
 	
 	
 }

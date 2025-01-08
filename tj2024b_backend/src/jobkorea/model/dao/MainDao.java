@@ -2,9 +2,8 @@ package jobkorea.model.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.DriverManager;
 
-public class ReviewDao {
+public class MainDao {
 
 	private Connection conn;
 	private String dburl = "jdbc:mysql://localhost:3306/jobkorea";
@@ -12,8 +11,8 @@ public class ReviewDao {
 	private String dbpwd = "1234";
 	
 	// 싱글톤
-	private static ReviewDao instance = new ReviewDao();
-	private ReviewDao() { // 생성자
+	private static MainDao instance = new MainDao();
+	private MainDao() { // 생성자
 	    try {    // 예외처리
 	       // 1) JDBC 클래스 드라이버 로드 : .Class.forName()
 	       Class.forName("com.mysql.cj.jdbc.Driver");
@@ -24,7 +23,7 @@ public class ReviewDao {
 	       System.out.println(">> DB 연동 실패 "+ e);
 	    }
 	}
-	public static ReviewDao getInstance() {return instance;}
+	public static MainDao getInstance() {return instance;}
 	
 	
 	
