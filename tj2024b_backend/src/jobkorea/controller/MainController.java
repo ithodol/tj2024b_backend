@@ -21,6 +21,8 @@ public class MainController {
 	}
 	   
 	   
+	
+	
 	   
 	// [1] 기업 회원가입 메소드 / 타입 boolean
 	public boolean eSignUp() {
