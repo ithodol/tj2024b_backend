@@ -10,10 +10,16 @@ public class MainController {
 	private MainController() {}
 	public static MainController getInstance() {return instance;}
 	
-	// [2] 일반 로그인 메소드 / 타입 boolean
-	public boolean mLogin(MemberDto memberDto) {
+	
+	public boolean mSignUp(MemberDto memberDto) {
 	      boolean result = MainDao.getInstance().mSignUp(memberDto);
 	      return result;
+	}
+	
+	
+	// [2] 일반 로그인 메소드 / 타입 boolean
+	public boolean mLogin() {
+
 	}
 	// [3] 일반 로그아웃 메소드 / 타입 boolean
 	public boolean mLogout() {

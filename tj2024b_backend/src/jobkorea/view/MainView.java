@@ -40,7 +40,8 @@ public class MainView {
 		   else if(choose4 == 2) {}
 		   else if(choose4 == 3) {}
 	   }
-	}
+	} // ****run은 while문을 돌려야 하나요?
+	
 	
 	   // [1] 일반 회원가입 메소드 / 타입 boolean
 	   public void mSignUp() {
@@ -51,11 +52,22 @@ public class MainView {
 	      System.out.print("성별 : ");		boolean mgender = scan.nextBoolean();
 	      System.out.print("생년월일 : ");		String mdate = scan.next();
 	      System.out.print("주소 : ");		String maddr = scan.next();
+	      
 	      MemberDto memberDto = new MemberDto();
 	      memberDto.setMid(mid);
+	      memberDto.setMpwd(mpwd);
+	      memberDto.setMname(mname);
+	      memberDto.setMgender(mgender);
+	      memberDto.setMdate(mdate);
+	      memberDto.setMaddr(maddr);
 	      
 	      //MemberDto memberDto = new MemberDto(mid, mpwd, mname, mgender, mdate, maddr);
-	      boolean result = MainController.getInstance().mSignUp();
+	      boolean result = MainController.getInstance().mSignUp(memberDto);
+	      if(result) {
+	    	  System.out.println("[회원가입 성공]");
+	      }else {
+	    	  System.out.println("[회원가입 실패]");
+	      }
 
 		   
 	   }
