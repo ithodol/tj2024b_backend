@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import jobkorea.controller.MainController;
 import jobkorea.model.dto.MemberDto;
+import jobkorea.model.dto.PostDto;
 
 public class MainView {
 
@@ -53,10 +54,18 @@ public class MainView {
 	      System.out.print("주소 : ");		String maddr = scan.next();
 	      MemberDto memberDto = new MemberDto();
 	      memberDto.setMid(mid);
-	      
-	      //MemberDto memberDto = new MemberDto(mid, mpwd, mname, mgender, mdate, maddr);
-	      boolean result = MainController.getInstance().mSignUp();
-
+	      memberDto.setMpwd(mpwd);
+	      memberDto.setMname(mname);
+	      memberDto.setMgender(mgender);
+	      memberDto.setMdate(mdate);
+	      memberDto.setMaddr(maddr);
+	     	      
+	      boolean result = MainController.getInstance().mSignUp(memberDto);
+	      if(result) {
+	    	  System.out.println("[회원가입 성공]");
+	      }else {
+	    	  System.out.println("[회원가입 실패]");
+	      }
 		   
 	   }
 	   // [2] 일반 로그인 메소드 / 타입 boolean
@@ -82,6 +91,26 @@ public class MainView {
 	   public void eLogout() {
 	      
 	   }
+	   
+	   
+	   
+	// [1] 우수기업 리스트 메소드 R
+	    public void bestList() {
+	      System.out.println("======= 우수기업리스트 =======");
+	      PostDto postDto = new PostDto();
+	      MainController.getInstance().bestList(postDto);
+	   }
+	    // [2] 후기 리스트 메소드 R
+	    public void reviewList(String ename) {
+	       ReviewDto reviewDto = new ReviewDto();
+	       MainController.getInstance().reviewList(ename);;
+	   }
+
+
+	
+	   
+	   
+	   
 }
 
 

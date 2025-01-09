@@ -2,6 +2,7 @@ package jobkorea.controller;
 
 import jobkorea.model.dao.MainDao;
 import jobkorea.model.dto.MemberDto;
+import jobkorea.model.dto.PostDto;
 
 public class MainController {
 
@@ -10,10 +11,16 @@ public class MainController {
 	private MainController() {}
 	public static MainController getInstance() {return instance;}
 	
-	// [2] 일반 로그인 메소드 / 타입 boolean
-	public boolean mLogin(MemberDto memberDto) {
+	// [1] 일반 회원가ㅏ입 메소드
+	public boolean mSignUp(MemberDto memberDto) {
 	      boolean result = MainDao.getInstance().mSignUp(memberDto);
 	      return result;
+	}
+	
+	
+	// [2] 일반 로그인 메소드 / 타입 boolean
+	public boolean mLogin() {
+
 	}
 	// [3] 일반 로그아웃 메소드 / 타입 boolean
 	public boolean mLogout() {
@@ -35,5 +42,15 @@ public class MainController {
 	      
 	}
 	
+	
+	
+    // [1] 우수기업 리스트 메소드 R
+    public void bestList(PostDto postDto) {
+       MainDao.getInstance().bestList();
+   }
+    // [2] 후기 리스트 메소드 R
+    public void reviewList(String ename) {
+      MainDao.getInstance().reviewList(ename);
+   }
 	
 }

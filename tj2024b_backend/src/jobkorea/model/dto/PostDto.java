@@ -10,11 +10,15 @@ public class PostDto {
 	private String psalary;
 	private String pstart;
 	private String pend;
+	private int cno;
+	private int eno;
 
 	// 생성자
 	public PostDto() {};
+	
+	
 	public PostDto(int pno, String ptitle, String pcontent, String phistory, String pcount, String psalary,
-			String pstart, String pend) {
+			String pstart, String pend, int cno, int eno) {
 		super();
 		this.pno = pno;
 		this.ptitle = ptitle;
@@ -24,8 +28,11 @@ public class PostDto {
 		this.psalary = psalary;
 		this.pstart = pstart;
 		this.pend = pend;
+		this.cno = cno;
+		this.eno = eno;
 	}
-	
+
+
 	// 메소드
 		// getter, setter
 	public int getPno() {
@@ -77,12 +84,36 @@ public class PostDto {
 		this.pend = pend;
 	}
 	
-		// toString
+		public int getCno() {
+		return cno;
+	}
+
+
+	public void setCno(int cno) {
+		this.cno = cno;
+	}
+
+
+	public int getEno() {
+		return eno;
+	}
+
+
+	public void setEno(int eno) {
+		this.eno = eno;
+	}
+
+	// toString
+
 	@Override
 	public String toString() {
 		return "PostDto [pno=" + pno + ", ptitle=" + ptitle + ", pcontent=" + pcontent + ", phistory=" + phistory
-				+ ", pcount=" + pcount + ", psalary=" + psalary + ", pstart=" + pstart + ", pend=" + pend + "]";
+				+ ", pcount=" + pcount + ", psalary=" + psalary + ", pstart=" + pstart + ", pend=" + pend + ", cno="
+				+ cno + ", eno=" + eno + "]";
 	}
+
+
+	
 	
 	
 	
