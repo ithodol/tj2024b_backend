@@ -68,6 +68,8 @@ public class MemberDto {
 				+ ", mdate=" + mdate + ", maddr=" + maddr + "]";
 	}
 	
+	// gender는 String이 아닌데 여기에 들어가도 되는 건가요
+	
 	
 	
 	

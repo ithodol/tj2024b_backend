@@ -20,6 +20,7 @@ public class MainView {
 	// 2 : 기업 로그인 / 회원가입 메소드 연동 -> 성공 시 기업 view 연동 
 	// 3 : 취업 연동
 	public void run() {
+<<<<<<< HEAD
 		while(true) {
 			System.out.println("1.일반  2.기업  3.취업");
 			int choose = scan.nextInt();
@@ -44,6 +45,31 @@ public class MainView {
 		   }
 		} // while end
 	} // f run end
+=======
+	   System.out.println("1.일반  2.기업  3.취업");
+	   int choose = scan.nextInt();
+	   if(choose == 1) {
+		   System.out.println(">> 1.일반 회원가입  2.일반 로그인");
+		   int choose2 = scan.nextInt();
+		   if(choose2 == 1) {mSignUp();}
+		   else if(choose2 == 2) {mLogin();}
+	   }
+	   else if(choose == 2) {
+		   System.out.println(">> 1.기업 회원가입  2.기업 로그인");
+		   int choose3 = scan.nextInt();
+		   if(choose3 == 1) {eSignUp();}
+		   else if(choose3 == 2) {eLogin();}
+	   }
+	   else if(choose == 3) {
+		   System.out.println(">> 1.우수기업순위  2.합격자 후기  3.돌아가기");
+		   int choose4 = scan.nextInt();
+		   if(choose4 == 1) {}
+		   else if(choose4 == 2) {}
+		   else if(choose4 == 3) {}
+	   }
+	} // ****run은 while문을 돌려야 하나요?
+	
+>>>>>>> branch 'master' of https://github.com/ithodol/tj2024b_backend
 	
 	   // [1] 일반 회원가입 메소드 / 타입 boolean
 	   public void mSignUp() {
@@ -58,6 +84,7 @@ public class MainView {
 	      }
 	      System.out.print("생년월일 : ");		String mdate = scan.next();
 	      System.out.print("주소 : ");		String maddr = scan.next();
+	      
 	      MemberDto memberDto = new MemberDto();
 	      memberDto.setMid(mid);
 	      memberDto.setMpwd(mpwd);
@@ -65,6 +92,7 @@ public class MainView {
 	      memberDto.setMgender(mgender);
 	      memberDto.setMdate(mdate);
 	      memberDto.setMaddr(maddr);
+<<<<<<< HEAD
 	     	      
 	      boolean result = MainController.getInstance().mSignUp(memberDto);
 	      if(result) {
@@ -72,6 +100,18 @@ public class MainView {
 	      }else {
 	    	  System.out.println("[회원가입 실패]");
 	      }  
+=======
+	      
+	      //MemberDto memberDto = new MemberDto(mid, mpwd, mname, mgender, mdate, maddr);
+	      boolean result = MainController.getInstance().mSignUp(memberDto);
+	      if(result) {
+	    	  System.out.println("[회원가입 성공]");
+	      }else {
+	    	  System.out.println("[회원가입 실패]");
+	      }
+
+		   
+>>>>>>> branch 'master' of https://github.com/ithodol/tj2024b_backend
 	   }
 	   // [2] 일반 로그인 메소드 / 타입 boolean
 	   public void mLogin() {

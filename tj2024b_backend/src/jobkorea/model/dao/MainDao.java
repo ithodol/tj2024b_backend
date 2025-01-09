@@ -3,8 +3,13 @@ package jobkorea.model.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+<<<<<<< HEAD
 import java.sql.ResultSet;
 import java.sql.SQLException;
+=======
+
+import boardservice10.model.dto.MemberDto;
+>>>>>>> branch 'master' of https://github.com/ithodol/tj2024b_backend
 
 import jobkorea.model.dto.MemberDto;
 
@@ -31,6 +36,7 @@ public class MainDao {
 	}
 	public static MainDao getInstance() {return instance;}
 	
+<<<<<<< HEAD
 	// 일반 회원가입 SQL 처리 메소드 
 	public boolean mSignUp(MemberDto memberDto) {
 		try {
@@ -51,6 +57,40 @@ public class MainDao {
 		return false;
 		
 	} // f mSignUp end
+=======
+	// 일반 회원가입 SQL 처리 메소드 // boolean은 sql에 어떻게 저장하나요
+	public boolean mSignUp(MemberDto memberDto) {
+
+		// SQL 작성
+		String sql = "insert into member(mid, mpwd, mname, mdate, maddr) values('"+memberDto.getMid()+"', '"+memberDto.getMpwd()+"', '"+memberDto.getMname()+"', '"+memberDto.getMdate()+"', '"+memberDto.getMaddr()+"')";
+		boolean sqlB = "insert into member(mgender) value('"+memberDto.isMgender()+"')";
+		
+		
+		// DB와 연동된 곳에 SQL 기재
+		PreparedStatement ps = conn.prepareStatement(sql);
+		
+		// 기재된 SQL을 실행하고 결과 받기
+		int count = ps.executeUpdate();
+		
+		// 결과에 따른 처리 및 반환
+		if(count == 1) {return true;}
+
+		return false;
+		
+	}
+	
+	
+	// 일반 로그인 SQL 처리 메소드
+	public boolean mSignUp() {
+		
+	}
+	
+	
+	// 일반 로그아웃 SQL 처리 메소드
+	public boolean mSignUp() {
+		
+	}
+>>>>>>> branch 'master' of https://github.com/ithodol/tj2024b_backend
 	
 	
 	
