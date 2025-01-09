@@ -13,7 +13,7 @@ public class MemberView {
 	public static MemberView getInsetance() {return instance;}
 	
 	private Scanner scan = new Scanner(System.in);
-	// 0. 메인 메뉴 메소드
+	// 0. (로그인 하기 전)메인 메뉴 메소드
 	public void run() {
 		while(true) {
 			System.out.println("1.회원가입  2.로그인  3.아이디찾기  4.비밀번호 찾기");
@@ -53,16 +53,18 @@ public class MemberView {
 		memberDto.setMpwd(mpwd);
 		boolean result = MemberController.getInsetance().login(memberDto);
 		if(result) {
-			System.out.println("로그인 성공");
+			System.out.println("[로그인 성공]");
+			// BoardView 메인메뉴 메소드 호출
+			BoardView.getInsetance().index();
 		}else {
-			System.out.println("동일한 회원정보가 없습니다");
+			System.out.println("[동일한 회원정보가 없습니다]");
 		}
 	} // f login end
 	
 	// 2-1 로그아웃 화면 메소드
 	public void logout() {
 		MemberController.getInsetance().logout();
-		System.out.println("로그아웃 완료했습니다");
+		System.out.println("[로그아웃 완료했습니다]");
 	}
 	
 	
@@ -70,6 +72,7 @@ public class MemberView {
 	// 3. 아이디찾기 화면 메소드
 	public void findId() {
 		// (1) 입력
+		System.out.println("===== 아이디 찾기 =====");
 		System.out.print("이름 : ");		String mname = scan.next();
 		System.out.print("전화번호 : ");		String mphone = scan.next();
 		// (2) 객체화 // 데이터 포장(view 에서 controller 이동)
@@ -95,6 +98,7 @@ public class MemberView {
 	// 4. 비밀번호찾기 화면 메소드
 	public void findPwd() {
 		// (1) 입력
+		System.out.println("===== 비밀번호 찾기 =====");
 		System.out.print("아이디 : ");	String mid = scan.next();
 		System.out.print("전화번호 : ");	String mphone = scan.next();
 		// (2) 객체화 // 데이터 포장(view 에서 controller 이동)
@@ -115,7 +119,7 @@ public class MemberView {
 	
 	
 	// 5. 내 정보 보기 화면 메소드
-	public void myInfo() {
+	public int myInfo() {
 		// 순서 : 1입력 -> 2객체화 -> 3컨트롤러에게 전달하고 응답 결과받기 -> 4컨트롤러의 결과에 다른 처리
 		// 1,2 입력, 객체화 생략
 		// 3 받는 곳 = MemberController().myInfo(주는곳);
@@ -130,25 +134,49 @@ public class MemberView {
 		while(true) {
 			System.out.println("1.회원수정  2.회원탈퇴  3.뒤로가기");
 			int choose2 = scan.nextInt();
-			if(choose2 == 1) {}
-			else if(choose2 == 2) {delete(); break;}
-			else if(choose2 == 3) {break;}
-		}
+			if(choose2 == 1) {update();}
+			else if(choose2 == 2) {
+				int state = delete();
+				if(state == 0) {return 0;}
+			}
+			else if(choose2 == 3) {break;} // 메뉴에서 무한반복 탈출
+		} // while end
+		return 1;
 	} // f myInfo end
 	
 	// 6. 회원탈퇴 화면 메소드
-	public void delete() {
+	public int delete() {
 		System.out.println("정말 탈퇴하시겠습니까? 0.확인  1.취소");
 		int choose2 = scan.nextInt();
 		if(choose2 == 0) {
 			// 탈퇴처리 컨트롤러 요청
 			MemberController.getInsetance().delete();
-			logout();
+			return 0; // 탈퇴했다
 		}
+		return 1;
 	} // f delete end
 	
 	
 	
-}
+	// 7. 회원 수정 화면 메소드
+	public void update() {
+		// 순서 : 1입력 -> 2객체화 -> 3컨트롤러에게 전달하고 응답 결과받기 -> 4컨트롤러의 결과에 다른 처리
+		System.out.print("새로운 비밀번호 : ");		String mpwd = scan.next();
+		System.out.print("새로운 이름 : ");			String mname = scan.next();
+		System.out.print("새로운 전화번호 : ");		String mphone = scan.next();
+		MemberDto memberDto = new MemberDto();
+		memberDto.setMpwd(mpwd);
+		memberDto.setMname(mname);
+		memberDto.setMphone(mphone);
+		boolean result = MemberController.getInsetance().update(memberDto);
+		if(result) {System.out.println("[수정 성공]");}
+		else {System.out.println("[수정 실패]");}
+		
+	} // f update end
+	
+	
+} // class end
+
+
 
 

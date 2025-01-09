@@ -74,6 +74,37 @@ public class MemberController {
 		MemberDao.getInsetance().delete(loginMno);
 	}
 	
+	
+	
+	
+	
+	// 7. 회원 수정 컨트롤러 메소드
+	public boolean update(MemberDto memberDto) {
+		// + 누구를 수정할건지, 현재 로그인 회원이 수정하므로 현재 로그인된 회원번호를 DTO 담아주기
+		memberDto.setMno(loginMno);
+		boolean result = MemberDao.getInsetance().update(memberDto);
+		return result;
+	}
+	
+	
+	
+	
+	
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
