@@ -32,7 +32,7 @@ select * from board;
 
 #[9] 개별 게시물 조회 selelct * from 테이블명 where 조건;
 select * from board where bno = 3; 
--- JDBC elsect *from board where bno = ? ;
+-- JDBC select *from board where bno = ? ;
 
 
 
