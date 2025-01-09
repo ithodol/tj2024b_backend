@@ -53,9 +53,15 @@ public class MainView {
 	      System.out.print("이름 : ");		String mname = scan.next();
 	      System.out.print("성별(0.남/1.여) : ");		int gender = scan.nextInt();
 	      boolean mgender = false; // 0 = 남성(false) / 기본값 설정
+	      
 	      if(gender == 1) { // 
 	    	  mgender = true; // 1 = 여성(true)
+	    	  System.out.println(mgender);
+	      }else if(gender == 0 ) {
+	    	  mgender = false;
+	    	  System.out.println(mgender);
 	      }
+	      
 	      System.out.print("생년월일 : ");		String mdate = scan.next();
 	      System.out.print("주소 : ");		String maddr = scan.next();
 	      

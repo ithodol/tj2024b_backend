@@ -7,8 +7,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import jobkorea.model.dto.MemberDto;
 
-import boardservice10.model.dto.MemberDto;
 
 
 public class MainDao {
@@ -26,7 +26,6 @@ public class MainDao {
 	       Class.forName("com.mysql.cj.jdbc.Driver");
 	       // 2) 설정한 경로 / 계정 / 비밀번호로 DB 서버 연동 시도 후 결과(구현체) 반환  
 	       conn = DriverManager.getConnection(dburl,dbuser,dbpwd);
-	       System.out.println(">> DB 연동 성공");
 	    }catch (Exception e) {
 	       System.out.println(">> DB 연동 실패 "+ e);
 	    }
@@ -39,12 +38,18 @@ public class MainDao {
 		try {
 			// SQL 작성
 			
-			String sql = "insert into member(mid, mpwd, mname, mgener, mdate, maddr) values('"+memberDto.getMid()+"', '"+memberDto.getMpwd()+"', '"+memberDto.getMname()+"','"+memberDto.isMgender()+"' '"+memberDto.getMdate()+"', '"+memberDto.getMaddr()+"')";
-	
-			
+			String sql = "insert into member(mid, mpwd, mname, mgender, mdate, maddr) values(?, ?, ?, ?, ?, ?)";
+
 			// DB와 연동된 곳에 SQL 기재
 			PreparedStatement ps = conn.prepareStatement(sql);
 			
+			ps.setString(1, memberDto.getMid());
+			ps.setString(2, memberDto.getMpwd());
+			ps.setString(3, memberDto.getMname());
+			ps.setBoolean(4, memberDto.isMgender());
+			ps.setString(5, memberDto.getMdate());
+			ps.setString(6, memberDto.getMaddr());
+					
 			// 기재된 SQL을 실행하고 결과 받기
 			int count = ps.executeUpdate();
 			

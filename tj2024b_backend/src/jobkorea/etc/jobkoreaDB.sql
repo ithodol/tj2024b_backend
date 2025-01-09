@@ -9,7 +9,7 @@ create table member(
     mpwd varchar(20) not null,
     mname varchar(30) not null,
     mgender boolean default false,
-    mdate date not null,
+    mdate varchar(30) not null,
     maddr varchar(100) not null,
     constraint primary key(mno)
 );
@@ -19,6 +19,8 @@ insert into member(mid, mpwd, mname, mgender, mdate, maddr) values('test3', '789
 insert into member(mid, mpwd, mname, mgender, mdate, maddr) values('test4', '147147', '전은서', true, '2025-01-06', '서울 부평구');
 insert into member(mid, mpwd, mname, mgender, mdate, maddr) values('test5', '258258', '이민진', false, '2025-01-01', '서울 남동구');
 insert into member(mid, mpwd, mname, mgender, mdate, maddr) values('test6', '369369', '김도하', true, '2024-12-31', '서울 연수구');
+
+insert into member(mid, mpwd, mname, mgender, mdate, maddr) values('111','2222','0000',true,'6666','5555');
 
 
 # 기업회원관리
@@ -119,5 +121,3 @@ insert into review( rrating , rcontent , eno , mno ) values ( '4' , '돈을 많�
 insert into review( rrating , rcontent , eno , mno ) values ( '2' , '가지마세요.' , '1' , '2' );
 insert into review( rrating , rcontent , eno , mno ) values ( '2' , '비추합니다.' , '1' , '3' );
 insert into review( rrating , rcontent , eno , mno ) values ( '5' , '좋아요.' , '2' , '3' );
-
-
