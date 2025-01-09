@@ -3,11 +3,12 @@ package jobkorea.model.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import jobkorea.model.dto.MemberDto;
 
-
+  
 public class MainDao {
 
 	private Connection conn;
@@ -33,33 +34,35 @@ public class MainDao {
 	// 일반 회원가입 SQL 처리 메소드 
 	public boolean mSignUp(MemberDto memberDto) {
 		try {
-
-		// SQL 작성
-		String sql = "insert into member(mid, mpwd, mname, mdate, maddr) values('"+memberDto.getMid()+"', '"+memberDto.getMpwd()+"', '"+memberDto.getMname()+"','"+memberDto.isMgender()+"' '"+memberDto.getMdate()+"', '"+memberDto.getMaddr()+"')";
-
-		
-		// DB와 연동된 곳에 SQL 기재
-		PreparedStatement ps = conn.prepareStatement(sql);
-		
-		// 기재된 SQL을 실행하고 결과 받기
-		int count = ps.executeUpdate();
-		
-		// 결과에 따른 처리 및 반환
-		if(count == 1) {return true;}
+			// SQL 작성
+			
+			String sql = "insert into member(mid, mpwd, mname, mgener, mdate, maddr) values('"+memberDto.getMid()+"', '"+memberDto.getMpwd()+"', '"+memberDto.getMname()+"','"+memberDto.isMgender()+"' '"+memberDto.getMdate()+"', '"+memberDto.getMaddr()+"')";
+	
+			
+			// DB와 연동된 곳에 SQL 기재
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			// 기재된 SQL을 실행하고 결과 받기
+			int count = ps.executeUpdate();
+			
+			// 결과에 따른 처리 및 반환
+			if(count == 1) {return true;}
 		}catch(SQLException e) {System.out.println(e);}
 		return false;
 		
-	}
+	} // f mSignUp end
+	
+	
 	
 	
 	// 일반 로그인 SQL 처리 메소드
-	public boolean mSignUp() {
+	public boolean mLogin() {
 		
 	}
 	
 	
 	// 일반 로그아웃 SQL 처리 메소드
-	public boolean mSignUp() {
+	public boolean mLogout() {
 		
 	}
 	

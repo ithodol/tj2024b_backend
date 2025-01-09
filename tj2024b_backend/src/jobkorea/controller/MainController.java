@@ -11,7 +11,7 @@ public class MainController {
 	private MainController() {}
 	public static MainController getInstance() {return instance;}
 	
-	// [1] 일반 회원가ㅏ입 메소드
+	// [1] 일반 회원가입 메소드
 	public boolean mSignUp(MemberDto memberDto) {
 	      boolean result = MainDao.getInstance().mSignUp(memberDto);
 	      return result;
