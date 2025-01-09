@@ -10,12 +10,9 @@ public class MainController {
 	private static MainController instance = new MainController();
 	private MainController() {}
 	public static MainController getInstance() {return instance;}
-	
-<<<<<<< HEAD
+
 	// [1] 일반 회원가입 메소드
-=======
-	
->>>>>>> branch 'master' of https://github.com/ithodol/tj2024b_backend
+
 	public boolean mSignUp(MemberDto memberDto) {
 	      boolean result = MainDao.getInstance().mSignUp(memberDto);
 	      return result;
