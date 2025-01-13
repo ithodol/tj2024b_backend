@@ -35,7 +35,7 @@ public class ReviewDao {
 	
 	
 	
-	
+	// 후기 등록
 	public boolean rWrite(ReviewDto reviewDto, String rname, int loginMno) {
 		try {
 			String sql = "insert into review( rcontent, rrating, mno) values(?, ?, ?)";
@@ -53,7 +53,7 @@ public class ReviewDao {
 	}
 	
 	
-	
+	// 합격한 기업리스트
 	public ArrayList<HashMap<String, String>> rPassPrint(int mno) {
 		ArrayList<HashMap<String, String>> passList = new ArrayList<HashMap<String, String>>();
 		try {
@@ -77,14 +77,14 @@ public class ReviewDao {
 				map.put("기업명", ename);
 
 				passList.add(map);
-			}
+			} // while end
 			
 		}catch(SQLException e) {System.out.println(e);}
 		return passList;
-	}
+	} // f rPassPrint end
 	
 	
-	
+	// 작성한 후기리스트 (기업후기 출력)
 	public ArrayList<HashMap<String, String>> rPrintAll(int mno) {
 		ArrayList<HashMap<String, String>> printList = new ArrayList<HashMap<String, String>>();
 		
@@ -98,18 +98,44 @@ public class ReviewDao {
 			
 			while(rs.next()) {
 				int rno = rs.getInt("rno");
+				String ename = rs.getString("ename");
+				int rrating = rs.getInt("rrating");
+				String rcontent = rs.getString("rcontent");
+				String rdate = rs.getString("rdate");
 				
-			}
+				HashMap<String, String> map = new HashMap<String, String>();
+				
+				map.put("후기번호", rno + "");
+				map.put("기업명", ename);
+				map.put("별점", rrating + "");
+				map.put("후기내용", rcontent);
+				map.put("작성일자", rdate); // now() 사용했는데 String으로 넣어도 되나요
+				
+				printList.add(map);
+				
+			} // while end
 			
 		}catch(SQLException e) {System.out.println(e);}
-		
+		return printList;
+	} // f rPrintAll end
+	
+	
+	// 후기 수정
+	public boolean rUpdate(String ename, int rrating, String rcontent) {
+		String sql = 
 	}
 	
-	
 
 
 	
-}
+} // class end
+
+
+
+
+
+
+
 
 
 

@@ -11,7 +11,7 @@ public class ReviewView {
 	// 싱글톤
 	private static ReviewView instance = new ReviewView();
 	private ReviewView() {}
-	public static ReviewView getinstance() { return instance; }
+	public static ReviewView getInstance() { return instance; }
 	
 	Scanner scan = new Scanner(System.in);
 	
@@ -43,6 +43,7 @@ public class ReviewView {
 	
 	
 	// 후기 등록 페이지
+	// 작성할 지원번호는 어디에서 받나요
 	public void rWrite(int loginMno) {
 		System.out.print("기업명 : ");	String rname = scan.next();
 		System.out.print("별점 : ");		int rrating = scan.nextInt();
@@ -62,7 +63,7 @@ public class ReviewView {
 	}
 	
 	
-	
+	// 합격한 기업리스트
 	public void rPassPrint(int mno) {
 		ArrayList<HashMap<String, String>> passList = ReviewController.getInstance().rPassPrint(mno);
 		for(int index = 0; index <= passList.size()-1; index++) {
@@ -72,31 +73,49 @@ public class ReviewView {
 								"기업명 : "  + i.get("기업명") +
 								"공고명 : " + i.get("공고명")
 							);
-		}
-	}
+		} // for end
+	} // f rPassPrint end
 	
-
+	
+	
+	
+	
+	// 작성한 후기리스트 (기업후기 출력)
 	public void rPrintAll(int mno) {
 		ArrayList<HashMap<String, String>> printList = ReviewController.getInstance().rPrintAll(mno);
-		
-		
-		
-	}
-	
-	
-	
-
-	
-	
-	
-	
-	
+		for(int index = 0; index <= printList.size()-1; index++) {
+			HashMap<String, String> i = printList.get(index);
+			System.out.printf(
+								"후기번호 : " + i.get("후기번호") +
+								"기업명 : " + i.get("기업명") +
+								"별점 : " + i.get("별점") +
+								"후기내용 : " + i.get("후기내용") + 
+								"작성일자 : " + i.get("작성일자") // ??
+					);
+		} // for end
+	} // f rPrintAll end
 	
 	
 	
 	
 	// 후기 수정 페이지
 	public void rUpdate() {
+		// 수정할 후기 번호는 어디에서 받나요
+		System.out.print("기업명 : ");	String ename = scan.next();
+		System.out.print("별점 : ");		int rrating = scan.nextInt();
+		System.out.print("후기내용 : ");	String rcontent = scan.next();
+		
+		ReviewDto reviewDto = new ReviewDto(ename, rrating, rcontent);
+		boolean result = ReviewController.getInstance().rUpdate(ename, rrating, rcontent);
+		
+		if(result) {
+			System.out.println("[후기 수정 완료]");
+			return;
+		}
+		else {
+			System.out.println("[후기 수정 실패]");
+			return;
+		}
 		
 	}
 	
