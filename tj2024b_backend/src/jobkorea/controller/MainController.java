@@ -1,6 +1,7 @@
 package jobkorea.controller;
 
 import jobkorea.model.dao.MainDao;
+import jobkorea.model.dto.EnterpriseDto;
 import jobkorea.model.dto.MemberDto;
 import jobkorea.model.dto.PostDto;
 
@@ -33,8 +34,9 @@ public class MainController {
 	
 	   
 	// [1] 기업 회원가입 메소드 / 타입 boolean
-	public boolean eSignUp() {
-	      
+	public boolean eSignUp(EnterpriseDto enterpriseDto) {
+	      boolean result = MainDao.getInstance().eSignUp(enterpriseDto);
+	      return result;
 	}
 	// [2] 기업 로그인 메소드 / 타입 boolean
 	public boolean eLogin() {

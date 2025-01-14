@@ -36,15 +36,16 @@ public class ReviewDao {
 	
 	
 	// 후기 등록
-	public boolean rWrite(ReviewDto reviewDto, String rname, int loginMno) {
+	public boolean rWrite(ReviewDto reviewDto, int loginMno, int pno) {
 		try {
-			String sql = "insert into review( rcontent, rrating, mno) values(?, ?, ?)";
+			String sql = "insert into review(rrating, rcontent, mno, pno) values(?, ?, ?, ?)";
 			
 			PreparedStatement ps = conn.prepareStatement(sql);
 			
 			ps.setInt(1, reviewDto.getRrating());
 			ps.setString(2, reviewDto.getRcontent());
 			ps.setInt(3, loginMno);
+			ps.setInt(4, pno);
 			
 			int result = ps.executeUpdate();
 			if(result == 1) {return true;}
@@ -121,8 +122,9 @@ public class ReviewDao {
 	
 	
 	// 후기 수정
-	public boolean rUpdate(String ename, int rrating, String rcontent) {
-		String sql = 
+	public boolean rUpdate(ReviewDto reviewDto) {
+		String sql = "";
+		
 	}
 	
 

@@ -13,8 +13,8 @@ public class ReviewController {
 	public static ReviewController getInstance() { return instance; }
 	
 	// 후기 등록
-	public boolean rWrite(ReviewDto reviewDto, String rname, int loginMno) {
-		boolean result = ReviewDao.getInstance().rWrite(reviewDto, rname, loginMno);
+	public boolean rWrite(ReviewDto reviewDto, int loginMno, int pno) {
+		boolean result = ReviewDao.getInstance().rWrite(reviewDto, loginMno, pno);
 		return result;
 	}
 	
@@ -34,8 +34,8 @@ public class ReviewController {
 	
 	
 	// 후기 수정
-	public boolean rUpdate() {
-		boolean result = ReviewDao.getInstance().rUpdate(ename, rrating, rcontent);
+	public boolean rUpdate(ReviewDto reviewDto) {
+		boolean result = ReviewDao.getInstance().rUpdate(reviewDto);
 		return result;
 	}
 	

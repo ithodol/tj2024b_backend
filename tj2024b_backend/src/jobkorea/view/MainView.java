@@ -3,8 +3,10 @@ package jobkorea.view;
 import java.util.Scanner;
 
 import jobkorea.controller.MainController;
+import jobkorea.model.dto.EnterpriseDto;
 import jobkorea.model.dto.MemberDto;
 import jobkorea.model.dto.PostDto;
+import jobkorea.model.dto.ReviewDto;
 
 public class MainView {
 
@@ -52,8 +54,8 @@ public class MainView {
 	      System.out.print("비밀번호 : ");		String mpwd = scan.next();
 	      System.out.print("이름 : ");		String mname = scan.next();
 	      System.out.print("성별(0.남/1.여) : ");		int gender = scan.nextInt();
-	      boolean mgender = false; // 0 = 남성(false) / 기본값 설정
 	      
+	      boolean mgender = false; // 0 = 남성(false) / 기본값 설정
 	      if(gender == 1) { // 
 	    	  mgender = true; // 1 = 여성(true)
 	    	  System.out.println(mgender);
@@ -96,8 +98,26 @@ public class MainView {
 	   
 	   // [1] 기업 회원가입 메소드 / 타입 boolean
 	   public void eSignUp() {
-
+		   System.out.println("===== 기업 회원가입 =====");
+		   System.out.print("아이디 : ");		String eid = scan.next();
+		   System.out.print("비밀번호 : ");	String epwd = scan.next();
+		   System.out.print("기업명 : ");		String ename = scan.next();
+		   System.out.print("주소 : ");		String eaddr = scan.next();
+		   EnterpriseDto enterpriseDto = new EnterpriseDto();
+		   enterpriseDto.setEid(eid);
+		   enterpriseDto.setEpwd(epwd);
+		   enterpriseDto.setEname(ename);
+		   enterpriseDto.setEaddr(eaddr);
+		   
+	      boolean result = MainController.getInstance().eSignUp(enterpriseDto);
+	      if(result) {
+	    	  System.out.println("[회원가입 성공]");
+	      }else {
+	    	  System.out.println("[회원가입 실패]");
+	      } 
 	   }
+	   
+	   
 	   // [2] 기업 로그인 메소드 / 타입 boolean
 	   public void eLogin() {
 	      

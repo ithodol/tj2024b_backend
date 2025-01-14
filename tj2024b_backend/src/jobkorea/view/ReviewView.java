@@ -43,14 +43,15 @@ public class ReviewView {
 	
 	
 	// 후기 등록 페이지
-	// 작성할 지원번호는 어디에서 받나요
+	
 	public void rWrite(int loginMno) {
-		System.out.print("기업명 : ");	String rname = scan.next();
+		System.out.print("작성할 공고번호 : "); int pno = scan.nextInt();
 		System.out.print("별점 : ");		int rrating = scan.nextInt();
 		System.out.print("내용 : ");		String rcontent = scan.next();
 		
 		ReviewDto reviewDto = new ReviewDto(rrating, rcontent);
-		boolean result = ReviewController.getInstance().rWrite(reviewDto, rname, loginMno );
+		
+		boolean result = ReviewController.getInstance().rWrite(reviewDto, loginMno , pno);
 		
 		if(result) {
 			System.out.println("[후기 등록 완료]");
@@ -101,12 +102,12 @@ public class ReviewView {
 	// 후기 수정 페이지
 	public void rUpdate() {
 		// 수정할 후기 번호는 어디에서 받나요
-		System.out.print("기업명 : ");	String ename = scan.next();
+		System.out.print("수정할 후기 번호 : "); int rno = scan.nextInt();
 		System.out.print("별점 : ");		int rrating = scan.nextInt();
 		System.out.print("후기내용 : ");	String rcontent = scan.next();
 		
-		ReviewDto reviewDto = new ReviewDto(ename, rrating, rcontent);
-		boolean result = ReviewController.getInstance().rUpdate(ename, rrating, rcontent);
+		ReviewDto reviewDto = new ReviewDto(rno, rrating, rcontent);
+		boolean result = ReviewController.getInstance().rUpdate(reviewDto);
 		
 		if(result) {
 			System.out.println("[후기 수정 완료]");
