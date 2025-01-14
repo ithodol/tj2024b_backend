@@ -10,8 +10,8 @@ public class BoardDto {
 	private int mno;	// 작성자 회원번호
 	private int cno;	// 카테고리 번호
 	// ++
-		// 작성자 회원번호가 아닌 작성자의 아이디 FK값을 이용하여 PK레코드의 정보 얻기
-		// 카테고리 번호가 아닌 카테고리으 이름
+	private String mid;// 작성자 회원번호가 아닌 작성자의 아이디 FK값을 이용하여 PK레코드의 정보 얻기
+	private String cname;	// 카테고리 번호가 아닌 카테고리의 이름
 	
 	// 2. 생성자
 	public BoardDto() {}
@@ -89,6 +89,22 @@ public class BoardDto {
 
 	public void setCno(int cno) {
 		this.cno = cno;
+	}
+
+	public String getMid() {
+		return mid;
+	}
+
+	public void setMid(String mid) {
+		this.mid = mid;
+	}
+
+	public String getCname() {
+		return cname;
+	}
+
+	public void setCname(String cname) {
+		this.cname = cname;
 	}
 	
 	
